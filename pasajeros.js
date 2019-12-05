@@ -1,8 +1,7 @@
 
 const passengers=
 
-[
-    
+[   
     
     {
         "number": "513027",
@@ -19,7 +18,7 @@ const passengers=
         "route": "a",
         "stop": "1",
         "shift": "morning",
-        "time": "7",
+        "time": "7:00",
         "photo": "https://scontent.fgdl3-1.fna.fbcdn.net/v/t1.0-9/59971679_2249699265120374_6967046757863653376_n.jpg?_nc_cat=103&_nc_oc=AQkf1fhuJErLTBe4pd5J5q23luFvxtGnmkFG0ZH3YHundk2Awa8UL8xsWnxYvOFYm8k&_nc_ht=scontent.fgdl3-1.fna&oh=4ce7c566721ade66360f26f7c2e572be&oe=5E168DB5"
     },
     {
