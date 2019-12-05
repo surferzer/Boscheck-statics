@@ -5,14 +5,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <title>Document</title>
 </head>
-
+<H1>BOSCHECK STATISTICS</H1>
 <body>
+
+    <h1>Date:</h1>
     
+        <input type="text" id="datepicker" value=" Thu 6 Dic 2019">
+
+        <script src="moment.js"></script>
+        <script src="pikaday.js"></script>
+        <script>
+            var picker = new Pikaday({
+                field: document.getElementById('datepicker'),
+                format: 'D MMM YYYY',
+                onSelect: function() {
+                    console.log(this.getMoment().format('Do MMMM YYYY'));
+                }
+            });
+        </script>
 
 
+    <form name="selectRoute">
+        <h2>ROUTES</h2>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta A</label><br>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta B</label><br>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta C</label><br>
 
+    </form>
+
+    <form name="selectStop">
+            <h2>STOPS</h2>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 1</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 2</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 3</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 4</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 5</label><br>
+    
+        </form>
+
+
+        <form name="selectShift">
+                <h2>SHIFTS</h2>
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Morning </label><br>
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Afternoon</label><br>
+                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Night</label><br>
+                   
+        
+            </form>
 
         <script src="pasajeros.js"></script>
         <script src="logica.js"></script>

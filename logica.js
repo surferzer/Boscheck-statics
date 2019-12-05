@@ -61,3 +61,49 @@ let shiftM = result.filter(function (el) {
     }
 });
 console.log(shiftM);
+
+let shiftA = result.filter(function (el) {
+    //el es el equivalente al objeto
+    if (el.shift === "afternon") {
+        return console.log(el.name, el.number, el.time)
+    }
+});
+console.log(shiftA);
+
+let shiftN = result.filter(function (el) {
+    //el es el equivalente al objeto
+    if (el.shift === "night") {
+        return console.log(el.name, el.number, el.time)
+    }
+});
+console.log(shiftN);
+
+
+//filtrado por nombre
+let names = result.sort(function (a, b) {
+    if (a.name > b.name) {
+      return 1;
+    }
+    if (a.name < b.name) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  })    
+;
+console.log(names);
+
+/* 
+//filtrado por numero
+let number = result.sort(function (a, b) {
+    if (a.number > b.number) {
+      return 1;
+    }
+    if (a.number < b.number) {
+      return -1;
+    }
+    // a must be equal to b
+    return 0;
+  })    
+;
+console.log(number); */
