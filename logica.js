@@ -5,12 +5,13 @@ let result = passengers
 console.log(result);
 
 
+//filtrado por ROUTE
 let routeA = result.filter(function (el) {
     return (el.route === "a")
 });
 console.log(routeA);
 
-
+//filtrado por STOP
 let stopFilter1 = result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "1") {
@@ -50,3 +51,13 @@ let stopFilter5 = result.filter(function (el) {
     }
 });
 console.log(stopFilter1);
+
+
+//FILTRADO POR SHIFT
+let shiftM = result.filter(function (el) {
+    //el es el equivalente al objeto
+    if (el.shift === "morning") {
+        return console.log(el.name, el.number, el.time)
+    }
+});
+console.log(shiftM);
