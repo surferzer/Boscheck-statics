@@ -3,18 +3,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript"></script>
 </head>
-<H1>BOSCHECK STATISTICS</H1>
 <body>
+   
+<H1>BOSCHECK STATISTICS</H1>
 
+
+        
+                         
+                
+                   
     <h1>Date:</h1>
     
-        <input type="text" id="datepicker" value=" Thu 6 Dic 2019">
+        <input type="text" id="datepicker"  value="Fri 6 Dic 2019">
 
         <script src="moment.js"></script>
         <script src="pikaday.js"></script>
@@ -27,7 +36,11 @@
                 }
             });
         </script>
-
+<div id="grafics" style="display:none">
+<div id="piechart" >             
+    </div>
+                
+</div>
 
     <form name="selectRoute">
         <h2>ROUTES</h2>
@@ -57,92 +70,29 @@
         
             </form>
 
-           <div id="filter">
-               
-           </div>
-
-           <div id="grafics" style="display:none">
-               <!--  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Employe', 'Time'],
-["Alfonso Leyva", 6.15],
-["Alfonso Medrano", 6.00],
-["Benjamín Pantoja", 6.30],
-["Cinthia Sanchez de Tagle", 6.30],
-["Coral Quiñones", 6.15],
-["Cristian Rosales",6.00],
-["Diana Gonzalez", 6.00],
-["Dioney Zamora", 6.15],
-["Eduardo Murillo", 6.00],
-["Eduardo Vázquez", 6.15],
-["Felipe Dominguez", 6.30],
-["Fernanda Zermeño", 7.00],
-["Gabriel Palomares", 7.00],
-["Juan Calderón", 7.00],
-["Laura Maya", 6.45],
-["Omar Galindo", 6.00],
-["Pablo Benítez", 6.00],
-["Ricardo Nari", 6.15]
-         ]);
-
-        var options = {
-          title: 'Morning',
-          legend: { position: 'none' },
-          ticks: ["HOLA", 6.15, 6.30, 6.45, 7.00],
+           <table id="filter"  class="table table-dark"> </table>
           
-        };
+         
 
-        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
-  <body>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
- -->
-
- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- <script type="text/javascript">
-   google.charts.load('current', {'packages':['corechart']});
-   google.charts.setOnLoadCallback(drawChart);
-
-   function drawChart() {
-
-     var data = google.visualization.arrayToDataTable([
-       ['Task', 'Hours per Day'],
-       ['Stop 1',   6],
-       ['Stop 2',   5],
-       ['Stop 3',   3],
-       ['Stop 4',   1],
-       ['Stop 5',   3]
-     ]);
-
-     var options = {
-       title: 'Morning'
-     };
-
-     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-     chart.draw(data, options);
-   }
-
-
-   
- </script>
-</head>
-<body>
- <div id="piechart" style="width: 900px; height: 500px;"></div>
-
-
- 
+           <div id="grafic3">
+            
            </div>
-
+           <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <script src="pasajeros.js"></script>
         <script src="logica.js"></script>
+         
 </body>
 
 </html>
+
+
+<!-- ([
+                      ['Stop', 'Morning', 'Afternoon', 'Night'],
+                      ['Stop 1',  6,      5,           10        ],
+                      ['Stop 2',  5,      3,            8 ],
+                      ['Stop 3',  5,      6,            5  ],
+                      ['Stop 4',  2,      8,            3 ]
+                      ['Stop 5',   3,     0,            3 ]
+                    ]); -->

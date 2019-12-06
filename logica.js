@@ -13,7 +13,7 @@ function routes() {
 if(elementCheckbox4.checked){
     result.filter(function (el) {
         if (el.route === "a") {
-            elementList4.innerHTML += (el.name + el.number + `<dt><img src=${el.photo} width="50"></dt>` + "<br>")
+            elementList4.innerHTML += (`<tr><img src=${el.photo} width="50"></tr>` +"<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` + "<br>")
         }});
         } else {
             elementList4.innerHTML ="";
@@ -32,8 +32,8 @@ if(elementCheckbox1.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
     if(el.stop==="1") {
-       elementList1.innerHTML+= (el.name + el.number + el.time + "<br>")
-    }});
+       elementList1.innerHTML+= ("<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` +"<tr>   |   </tr>"+ `<td><tr>${el.time}</tr></td>` + "<br>")
+     }});
     }else{
     elementList1.innerHTML = '';
      }};
@@ -48,7 +48,7 @@ if(elementCheckbox2.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "2") {
-      elementList2.innerHTML+= (el.name + el.number + el.time + "<br>")
+      elementList2.innerHTML+= ("<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` +"<tr>   |   </tr>"+ `<td><tr>${el.time}</tr></td>` + "<br>")
     }
 });
 }else{
@@ -64,7 +64,7 @@ if(elementCheckbox3.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "3") {
-        elementList3.innerHTML+= (el.name + el.number + el.time + "<br>")
+        elementList3.innerHTML+= ( `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` +"<tr>   |   </tr>"+ `<td><tr>${el.time}</tr></td>` + "<br>")
     }
 });
 }else{
@@ -96,13 +96,14 @@ console.log(stopFilter5);
 function shiftM(){
      let elementCheckbox = document.getElementById("checkBoxSM"),
          elementList =  document.getElementById("filter");
+        
 
      if(elementCheckbox.checked){
         result.filter(function (el) {
             //el es el equivalente al objeto
             if (el.shift === "morning") {
-                show()
-                elementList.innerHTML+= (el.name + el.time + "<br>")
+                document.getElementById("grafics").style.display="block"
+                elementList.innerHTML+= ("<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` +"<tr>   |   </tr>"+ `<td><tr>${el.time}</tr></td>` + "<br>")
                 
             }
         });
@@ -126,9 +127,9 @@ function shiftA(){
 })};
 console.log(shiftA);
 
-function show(){
-    document.getElementById('grafics').style.display = 'block'
-}
+/* function show(){
+    document.getElementById('piechart').style.display = 'block'
+} */
 
 function shiftN(){
     result.filter(function (el) {
@@ -168,3 +169,27 @@ let number = result.sort(function (a, b) {
   })
 ;
 console.log(number); */
+
+
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+  var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Stop 1',   6],
+    ['Stop 2',   5],
+    ['Stop 3',   3],
+    ['Stop 4',   1],
+    ['Stop 5',   3]
+  ]);
+
+  var options = {
+    title: 'Morning'
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+  chart.draw(data, options);
+}
