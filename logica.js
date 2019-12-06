@@ -7,49 +7,71 @@ let result = passengers
 
 //filtrado por ROUTE
 function routes() {
+    let elementCheckbox4 = document.getElementById("r1"),
+    elementList4= document.getElementById("filter");
+
+if(elementCheckbox4.checked){
     result.filter(function (el) {
         if (el.route === "a") {
-            return document.getElementById("filter").innerHTML += (el.name + el.number + el.photo + "<br>")
-
+            elementList4.innerHTML += (el.name + el.number + `<dt><img src=${el.photo} width="50"></dt>` + "<br>")
+        }});
         } else {
-            return document.getElementById("filter").innerHTML = ("checked", false);
+            elementList4.innerHTML ="";
 
         }
-    }
-    )
-}
-
-;
+    };
 
 
 
 //filtrado por STOP
 function stopFilter1(){
+    let elementCheckbox1 = document.getElementById("cbox1"),
+    elementList1= document.getElementById("filter");
+
+if(elementCheckbox1.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
-    if (el.stop === "1") {
-        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
-    }
-})};
-console.log(stopFilter1);
+    if(el.stop==="1") {
+       elementList1.innerHTML+= (el.name + el.number + el.time + "<br>")
+    }});
+    }else{
+    elementList1.innerHTML = '';
+     }};
+
+
 
 function stopFilter2(){
+    let elementCheckbox2 = document.getElementById("cbox2"),
+    elementList2= document.getElementById("filter");
+
+if(elementCheckbox2.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "2") {
-        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
+      elementList2.innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-})};
-console.log(stopFilter2);
+});
+}else{
+    elementList2.innerHTML = '';
+     }};
+
 
 function stopFilter3(){
+    let elementCheckbox3 = document.getElementById("cbox3"),
+    elementList3= document.getElementById("filter");
+
+if(elementCheckbox3.checked){
      result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "3") {
-        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
+        elementList3.innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-})};
-console.log(stopFilter3);
+});
+}else{
+    elementList3.innerHTML = '';
+     }};
+
+
 
 function stopFilter4(){
      result.filter(function (el) {
