@@ -39,26 +39,106 @@
 
     <form name="selectStop">
             <h2>STOPS</h2>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 1</label><br>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 2</label><br>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 3</label><br>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 4</label><br>
-                <label><input type="checkbox" id="cbox1" value="first_checkbox"> Stop 5</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="stopFilter1()"> Stop 1</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="stopFilter2()"> Stop 2</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="stopFilter3()"> Stop 3</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="stopFilter4()"> Stop 4</label><br>
+                <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="stopFilter5()"> Stop 5</label><br>
     
         </form>
 
 
         <form name="selectShift">
                 <h2>SHIFTS</h2>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Morning </label><br>
-                    <label><input type="checkbox" id="cbox2" value="first_checkbox"> Afternoon</label><br>
-                    <label><input type="checkbox" id="cbox3" value="first_checkbox"> Night</label><br>
+                    <label><input type="checkbox" id="checkBoxSM" value="first_checkbox" onclick="shiftM()"> Morning </label><br>
+                    <label><input type="checkbox" id="cbox2" value="first_checkbox" onclick="shiftA()"> Afternoon</label><br>
+                    <label><input type="checkbox" id="cbox3" value="first_checkbox" onclick="shiftN()"> Night</label><br>
                    
         
             </form>
 
            <div id="filter">
                
+           </div>
+
+           <div id="grafics" style="display:none">
+               <!--  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Employe', 'Time'],
+["Alfonso Leyva", 6.15],
+["Alfonso Medrano", 6.00],
+["Benjamín Pantoja", 6.30],
+["Cinthia Sanchez de Tagle", 6.30],
+["Coral Quiñones", 6.15],
+["Cristian Rosales",6.00],
+["Diana Gonzalez", 6.00],
+["Dioney Zamora", 6.15],
+["Eduardo Murillo", 6.00],
+["Eduardo Vázquez", 6.15],
+["Felipe Dominguez", 6.30],
+["Fernanda Zermeño", 7.00],
+["Gabriel Palomares", 7.00],
+["Juan Calderón", 7.00],
+["Laura Maya", 6.45],
+["Omar Galindo", 6.00],
+["Pablo Benítez", 6.00],
+["Ricardo Nari", 6.15]
+         ]);
+
+        var options = {
+          title: 'Morning',
+          legend: { position: 'none' },
+          ticks: ["HOLA", 6.15, 6.30, 6.45, 7.00],
+          
+        };
+
+        var chart = new google.visualization.Histogram(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+ -->
+
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+   google.charts.load('current', {'packages':['corechart']});
+   google.charts.setOnLoadCallback(drawChart);
+
+   function drawChart() {
+
+     var data = google.visualization.arrayToDataTable([
+       ['Task', 'Hours per Day'],
+       ['Stop 1',   6],
+       ['Stop 2',   5],
+       ['Stop 3',   3],
+       ['Stop 4',   1],
+       ['Stop 5',   3]
+     ]);
+
+     var options = {
+       title: 'Morning'
+     };
+
+     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+     chart.draw(data, options);
+   }
+
+
+   
+ </script>
+</head>
+<body>
+ <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+
+ 
            </div>
 
         <script src="pasajeros.js"></script>

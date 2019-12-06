@@ -6,100 +6,133 @@ let result = passengers
 
 
 //filtrado por ROUTE
-function routes(){
- result.filter(function (el) {
-    if(el.route === "a" ){
-        return document.getElementById("filter").innerHTML+=(el.name + el.number+"<br>")
-    }
+function routes() {
+    result.filter(function (el) {
+        if (el.route === "a") {
+            return document.getElementById("filter").innerHTML += (el.name + el.number + el.photo + "<br>")
 
-    
-})};
+        } else {
+            return document.getElementById("filter").innerHTML = ("checked", false);
+
+        }
+    }
+    )
+}
+
+;
 
 
 
 //filtrado por STOP
-let stopFilter1 = result.filter(function (el) {
+function stopFilter1(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "1") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-});
+})};
 console.log(stopFilter1);
 
-let stopFilter2 = result.filter(function (el) {
+function stopFilter2(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "2") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-});
-console.log(stopFilter1);
+})};
+console.log(stopFilter2);
 
-let stopFilter3 = result.filter(function (el) {
+function stopFilter3(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "3") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-});
-console.log(stopFilter1);
+})};
+console.log(stopFilter3);
 
-let stopFilter4 = result.filter(function (el) {
+function stopFilter4(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "4") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-});
-console.log(stopFilter1);
+})};
+console.log(stopFilter4);
 
-let stopFilter5 = result.filter(function (el) {
+function stopFilter5(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.stop === "5") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.number + el.time + "<br>")
     }
-});
-console.log(stopFilter1);
+})};
+console.log(stopFilter5);
 
 
 //FILTRADO POR SHIFT
-let shiftM = result.filter(function (el) {
-    //el es el equivalente al objeto
-    if (el.shift === "morning") {
-        return console.log(el.name, el.number, el.time)
-    }
-});
-console.log(shiftM);
+function shiftM(){
+     let elementCheckbox = document.getElementById("checkBoxSM"),
+         elementList =  document.getElementById("filter");
 
-let shiftA = result.filter(function (el) {
+     if(elementCheckbox.checked){
+        result.filter(function (el) {
+            //el es el equivalente al objeto
+            if (el.shift === "morning") {
+                show()
+                elementList.innerHTML+= (el.name + el.time + "<br>")
+                
+            }
+        });
+     }else{
+        elementList.innerHTML = '';
+        document.getElementById("grafics").style.display="none"
+        
+     }
+
+};
+
+
+function shiftA(){
+     result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.shift === "afternon") {
-        return console.log(el.name, el.number, el.time)
+       
+        return document.getElementById("filter").innerHTML+= (el.name + el.time + "<br>")
+        
     }
-});
+})};
 console.log(shiftA);
 
-let shiftN = result.filter(function (el) {
+function show(){
+    document.getElementById('grafics').style.display = 'block'
+}
+
+function shiftN(){
+    result.filter(function (el) {
     //el es el equivalente al objeto
     if (el.shift === "night") {
-        return console.log(el.name, el.number, el.time)
+        return document.getElementById("filter").innerHTML+= (el.name + el.time + "<br>")
     }
-});
+})};
 console.log(shiftN);
 
 
 //filtrado por nombre
 let names = result.sort(function (a, b) {
     if (a.name > b.name) {
-      return 1;
+        return 1;
     }
     if (a.name < b.name) {
-      return -1;
+        return -1;
     }
     // a must be equal to b
     return 0;
-  })    
-;
+})
+    ;
 console.log(names);
 
-/* 
+/*
 //filtrado por numero
 let number = result.sort(function (a, b) {
     if (a.number > b.number) {
@@ -110,6 +143,6 @@ let number = result.sort(function (a, b) {
     }
     // a must be equal to b
     return 0;
-  })    
+  })
 ;
 console.log(number); */
