@@ -2,14 +2,20 @@
 //obteniendo datos del json
 
 let result = passengers
-console.log(result);
+
 
 
 //filtrado por ROUTE
-let routeA = result.filter(function (el) {
-    return (el.route === "a")
-});
-console.log(routeA);
+function routes(){
+ result.filter(function (el) {
+    if(el.route === "a" ){
+        return document.getElementById("filter").innerHTML+=(el.name + el.number+"<br>")
+    }
+
+    
+})};
+
+
 
 //filtrado por STOP
 let stopFilter1 = result.filter(function (el) {

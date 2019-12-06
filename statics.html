@@ -31,9 +31,9 @@
 
     <form name="selectRoute">
         <h2>ROUTES</h2>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta A</label><br>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta B</label><br>
-            <label><input type="checkbox" id="cbox1" value="first_checkbox"> Ruta C</label><br>
+            <label><input type="checkbox" id="cbox1" value="first_checkbox" onclick="routes()"> Ruta A</label><br>
+            <label><input type="checkbox" id="cbox2" value="second_checkbox"> Ruta B</label><br>
+            <label><input type="checkbox" id="cbox3" value="third_checkbox"> Ruta C</label><br>
 
     </form>
 
@@ -51,11 +51,15 @@
         <form name="selectShift">
                 <h2>SHIFTS</h2>
                     <label><input type="checkbox" id="cbox1" value="first_checkbox"> Morning </label><br>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Afternoon</label><br>
-                    <label><input type="checkbox" id="cbox1" value="first_checkbox"> Night</label><br>
+                    <label><input type="checkbox" id="cbox2" value="first_checkbox"> Afternoon</label><br>
+                    <label><input type="checkbox" id="cbox3" value="first_checkbox"> Night</label><br>
                    
         
             </form>
+
+           <div id="filter">
+               
+           </div>
 
         <script src="pasajeros.js"></script>
         <script src="logica.js"></script>
