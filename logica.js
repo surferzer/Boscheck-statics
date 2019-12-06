@@ -13,9 +13,11 @@ function routes() {
 if(elementCheckbox4.checked){
     result.filter(function (el) {
         if (el.route === "a") {
-            elementList4.innerHTML += (`<tr><img src=${el.photo} width="50"></tr>` +"<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` + "<br>")
+            document.getElementById("container").style.display="block"
+            elementList4.innerHTML += (`<tr><img src=${el.photo} width="60"></tr>` +"<tr>   |   </tr>"+  `<td><tr>${el.number}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.name}</tr></td>` +"<tr>   |   </tr>"+  `<td><tr>${el.stop}</tr></td>`+"<tr>   |   </tr>"+ `<td><tr>${el.time}</tr></td>`)
         }});
         } else {
+            document.getElementById("container").style.display="none"
             elementList4.innerHTML ="";
 
         }
@@ -186,10 +188,79 @@ function drawChart() {
   ]);
 
   var options = {
-    title: 'Morning'
-  };
+    title: 'Morning',
+    'legend':'left',
+    'width':400,
+    'height':300,
+'left': 500};
 
   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
 
   chart.draw(data, options);
 }
+
+
+//grafica generall
+Highcharts.chart('container', {
+
+    title: {
+        text: "Route A"
+    },
+
+    subtitle: {
+        text: "Stops"
+    },
+
+    yAxis: {
+        title: {
+            text: 'Number of Employees'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            pointStart: 0
+        }
+    },
+
+    series: [{
+        name: 'Stop 1',
+        data: [8000, 5000, 5000, 1000, 3000]
+    }, {
+        name: 'Stop 2',
+        data: [6000, 4000, 5000, 3000, 3000]
+    }, {
+        name: 'Stop 3',
+        data: [4000, 2000, 6000, 3000, 1000]
+    }, {
+        name: 'Stop 4',
+        data: [7000, 1000, 4000, 3000, 5000]
+    }, {
+        name: 'Stop 5',
+        data: [3000, 1000, 1000, 2000, 2000]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
